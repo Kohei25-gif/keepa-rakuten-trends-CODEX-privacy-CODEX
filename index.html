@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keepa 楽天推移グラフ（CODEX）プライバシーポリシー</title>
+  <style>
+    :root{color-scheme:light;--ink:#0f172a;--muted:#475569;--line:#dbe4ee;--brand:#0e7490;--soft:#f8fafc}
+    *{box-sizing:border-box} body{margin:0;background:var(--soft);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.75}
+    main{max-width:860px;margin:40px auto;padding:44px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 35px rgba(15,23,42,.07)}
+    h1{font-size:30px;line-height:1.35;margin:0 0 10px} h2{font-size:21px;border-bottom:2px solid #e2e8f0;padding-bottom:7px;margin-top:36px} h3{font-size:17px;margin-top:25px}
+    p,li{color:var(--muted)} .lead{font-size:17px}.note{background:#ecfdf5;border:1px solid #a7d9c4;padding:14px 18px;border-radius:10px}.date{color:#64748b;font-size:14px}
+    table{border-collapse:collapse;width:100%;font-size:14px} th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top} th{background:#f1f5f9}
+    code{background:#f1f5f9;padding:2px 5px;border-radius:4px} a{color:var(--brand)}
+    @media(max-width:700px){main{margin:0;padding:24px;border:0;border-radius:0}h1{font-size:25px}}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Keepa 楽天推移グラフ（CODEX）<br>プライバシーポリシー</h1>
+  <p class="date">制定日：2026年8月19日　最終更新日：2026年8月19日</p>
+  <p class="lead">本ポリシーは、Chrome拡張機能「Keepa 楽天推移グラフ（CODEX）」（以下「本拡張機能」）におけるデータの取り扱いを説明します。</p>
+
+  <h2>1. 単一の利用目的</h2>
+  <p>本拡張機能の目的は、Keepa製品ファインダーの商品一覧に、楽天市場の価格・順位・ショップ数の推移と、Keepa API履歴から算出した第三者セラーの売行きを追加表示し、利用者の仕入れ判断を補助することです。以下のデータはこの目的に必要な範囲でのみ使用します。</p>
+
+  <h2>2. 取得・利用するデータ</h2>
+  <table>
+    <thead><tr><th>データ</th><th>利用目的</th><th>保存・送信先</th></tr></thead>
+    <tbody>
+      <tr><td>JAN、ASIN、商品識別情報</td><td>楽天履歴とKeepa履歴の取得、列の表示</td><td>JANは <code>price2alert.com</code>、ASINは <code>api.keepa.com</code> へHTTPS送信。取得結果はChrome内に最大24時間保存</td></tr>
+      <tr><td>Keepa APIキー</td><td>利用者自身のKeepa契約で公式APIから履歴を取得</td><td>Chrome拡張機能専用の端末内領域へ保存し、<code>api.keepa.com</code> 以外には送信しない</td></tr>
+      <tr><td>DiscordユーザーID、表示名、対象サーバーの所属ロール</td><td>本拡張機能を利用できるグループ生かを確認</td><td>Discordと認証サーバー間でHTTPS通信。必要最小限の認証状態のみを保持</td></tr>
+      <tr><td>Discord OAuthトークン、本拡張機能用のセッション</td><td>ログイン状態の維持と定期的な利用資格の再確認</td><td>Discordトークンは認証サーバーの安全な保存領域で管理。拡張機能には短期のセッション情報だけを保存</td></tr>
+      <tr><td>取得範囲、基準価格、表示設定、取得キュー</td><td>選択の引き継ぎ、自動再開、不要なAPI再通信の防止</td><td>Chrome拡張機能専用の端末内領域</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. 取得しないデータ</h2>
+  <p>健康情報、支払い・金融情報、個人的な通信、正確な位置情報、ブラウザの閲覧履歴は取得しません。Keepaの現在開いている製品ファインダー以外のページ内容を収集する目的はありません。</p>
+
+  <h2>4. 第三者サービスへの送信</h2>
+  <ul>
+    <li><strong>Price2alert</strong>：JANを送信し、楽天の商品履歴を取得します。</li>
+    <li><strong>Keepa</strong>：ASINと利用者のKeepa APIキーを送信し、価格・カート・出品者別在庫履歴を取得します。</li>
+    <li><strong>Discord</strong>：利用者の同意のもとOAuthログインを行い、対象サーバーの所属ロールを確認します。</li>
+    <li><strong>認証サーバー</strong>：Discordの認証コード交換とロール確認を行い、拡張機能へ利用資格を示す短期セッションを発行します。Discordのクライアントシークレットは拡張機能内に保存しません。</li>
+  </ul>
+
+  <h2>5. データの保護と保持</h2>
+  <p>外部通信はHTTPSで行います。商品履歴の取得結果は原則と24時間で期限切れとし、期限切れデータは自動整理します。Discord認証情報は利用資格の確認に必要な期間だけ保持し、ログアウト・失効時はセッションを無効化します。</p>
+
+  <h2>6. データの販売・広告利用</h2>
+  <p>利用者データを販売しません。広告配信、行動ターゲティング、信用判断、本拡張機能の単一目的と無関係な利用は行いません。</p>
+
+  <h2>7. 利用者による管理と削除</h2>
+  <p>利用者は拡張機能の設定画面でKeepa APIキーを削除できます。Discordからログアウトすることで、拡張機能の認証セッションを無効化できます。拡張機能をアンインストールすると、Chrome内の専用保存領域のデータは削除されます。</p>
+
+  <h2>8. 子どものデータ</h2>
+  <p>本拡張機能は一般消費者向けの販売・仕入れ分析ツールであり、13歳未満の子どもを対象としません。</p>
+
+  <h2>9. 変更</h2>
+  <p>機能やデータの取り扱いを変更する場合、本ポリシーを更新します。重要な変更は、拡張機能内または配布元Discordサーバーでお知らせします。</p>
+
+  <h2>10. お問い合わせ</h2>
+  <p>本拡張機能の配布元Discordサーバーの運営者へご連絡ください。</p>
+
+  <p class="note">本拡張機能はKeepa、Amazon、楽天およびPrice2alertの公式製品ではなく、各社から提供・承認されたものではありません。</p>
+</main>
+</body>
+</html>
